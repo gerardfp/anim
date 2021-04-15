@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<head></head>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+
+    .header {
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(hero.jpg);
+        background-size: cover;
+        height: 60vh;
+        color: white;
+        animation: aheader .6s ease-in;
+    }
+    .header1 {
+        font-size: 6em;
+        animation: marc 1s;
+    }
+    .header2 {
+        font-size: 3em;
+        animation: pau 1.2s;
+    }
+    .header3 {
+        background-color: rgb(87, 194, 87);
+        padding: 0.5em;
+        border-radius: 4px;
+        box-shadow: 0px 0px 10px black;
+        animation: bryan 1.6s;
+        cursor: pointer;
+    }
+    .logo { 
+        color: white;
+        animation: alex 1.5s;
+    }
+
+
+    @keyframes aheader {
+        0% {
+            opacity: 0;
+        }
+        100% { 
+            opacity: 1;
+            }
+    }
+
+    @keyframes marc {
+        0% {
+            transform: translateY(50px);
+        }
+    }
+
+    @keyframes pau {
+        0% {
+            transform: translateY(50px);
+        }
+        20% {
+            transform: translateY(50px);
+        }
+    }
+    @keyframes bryan {
+        0% {
+            transform: translateY(50px);
+        }
+        20% {
+            transform: translateY(50px);
+        }
+    }
+
+    @keyframes alex {
+        0% {
+            transform: scale(0);
+        }
+        49% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(3);
+        }
+    }
+
+    
+</style>
+
+<!--
+<div class="header">
+    <img class="logo" src="logo.svg">
+    <span class="header1">Awesome</span>
+    <span class="header2">Your projects</span>
+    <span class="header3">Get started today</span>
+</div>
+
+-->
+
+<style>
+    .section1 {
+        display: flex;
+        gap: 2em;
+        padding: 10em 20em;
+        flex-wrap: wrap;
+    }
+    .card {
+        font-size: 3em;
+        width: 300px;
+        height: 400px;
+        display: grid;
+        perspective: 800px; 
+    }
+
+    .card-front {
+        grid-area: 1/1/1/1;
+        background-color: rgb(87, 194, 87);
+        height: 100%;
+        backface-visibility: hidden;
+        transition: transform 1s;
+    }
+    .card-back {
+        grid-area: 1/1/1/1;
+        background-color: silver;
+        height: 100%;
+        transform: rotateY(-180deg);
+        backface-visibility: hidden;
+        transition: transform 1s;
+    }
+
+    .card:hover .card-front {
+        transform: rotateY(180deg);
+    }
+    .card:hover .card-back {
+        transform: rotateY(0deg);
+    }
+
+</style>
+<div class="section1">
+    <div class="card">
+        <div class="card-front">
+            HOLA
+        </div>
+        <div class="card-back">
+            ADIOS
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            HOLA
+        </div>
+        <div class="card-back">
+            ADIOS
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            HOLA
+        </div>
+        <div class="card-back">
+            ADIOS
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            HOLA
+        </div>
+        <div class="card-back">
+            ADIOS
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            HOLA
+        </div>
+        <div class="card-back">
+            ADIOS
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            HOLA
+        </div>
+        <div class="card-back">
+            ADIOS
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<style>
+    .section1 {
+        display: flex;
+        gap: 4em;
+        padding: 8em 20em;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 300px; height: 300px;
+        display: grid;
+        perspective: 1000px;   
+    }
+
+    .card-front, .card-back {
+        grid-area: 1/1/1/1;
+        width: 100%; height: 100%;
+
+        backface-visibility: hidden;
+        transition: transform 1.6s;
+        transform-style: preserve-3d;
+        
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 4px;
+        
+        display: grid;
+        place-items: center;
+    }
+
+    .card-front {
+        background-color: rgb(87, 194, 87);
+    }
+
+    .card-back {
+        background-color: rgb(196, 196, 196);
+        transform: rotateY(-180deg);
+    }
+
+    .card:hover * {
+        transition: transform 0.4s;
+    }
+
+    .card:hover .card-front {
+        transform: rotateY(180deg);
+    }
+
+    .card:hover .card-back {
+        transform: rotateY(0deg);
+    }
+
+</style>
+<div class="section1">
+    <div class="card">
+        <div class="card-front">
+            hola
+        </div>
+        <div class="card-back">
+            adios
+            <br>
+            <a href="tal.html">GO!</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            hola
+        </div>
+        <div class="card-back">
+            adios
+            <br>
+            y tal
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            hola
+        </div>
+        <div class="card-back">
+            adios
+            <br>
+            y tal
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            hola
+        </div>
+        <div class="card-back">
+            adios
+            <br>
+            y tal
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            hola
+        </div>
+        <div class="card-back">
+            adios
+            <br>
+            y tal
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-front">
+            hola
+        </div>
+        <div class="card-back">
+            adios
+            <br>
+            y tal
+        </div>
+    </div>
+</div>
+-->
