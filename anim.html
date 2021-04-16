@@ -85,7 +85,7 @@
     
 </style>
 
-<!--
+
 <div class="header">
     <img class="logo" src="logo.svg">
     <span class="header1">Awesome</span>
@@ -93,7 +93,7 @@
     <span class="header3">Get started today</span>
 </div>
 
--->
+
 
 <style>
     .section1 {
@@ -113,7 +113,7 @@
         grid-area: 1/1/1/1;
         height: 100%;
         backface-visibility: hidden;
-        transition: transform 1s;
+        transition: transform 1.6s;
     }
 
     .card-front {
@@ -125,6 +125,10 @@
         transform: rotateY(-180deg);
     }
 
+    .card:hover * {
+        transition: transform 0.4s;
+    }
+
     .card:hover .card-front {
         transform: rotateY(180deg);
     }
@@ -133,39 +137,8 @@
     }
 
 </style>
+
 <div class="section1">
-    <div class="card">
-        <div class="card-front">
-            HOLA
-        </div>
-        <div class="card-back">
-            ADIOS
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-front">
-            HOLA
-        </div>
-        <div class="card-back">
-            ADIOS
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-front">
-            HOLA
-        </div>
-        <div class="card-back">
-            ADIOS
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-front">
-            HOLA
-        </div>
-        <div class="card-back">
-            ADIOS
-        </div>
-    </div>
     <div class="card">
         <div class="card-front">
             HOLA
@@ -185,19 +158,88 @@
 </div>
 
 
+<style>
+.section2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8em;
+    padding: 4em 20em;
+}
+.postal {
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(-100%);
+    transition: transform 1s;
+}
+.postal:nth-child(odd){
+    flex-direction: row-reverse;
+    transform: translateX(100%);
+    background-color: rgb(221, 221, 221);
+}
+.postal.animada{
+    transform: translateX(0);
+}
+.postal img {
+    width: 400px;
+}
+.postal div {
+    display: flex;
+    flex-direction: column;
+}
+</style>
 
+<div class="section2">
+    <div class="postal">
+        <img src="i1.svg">
+        <div>
+            <h1>1Juanmi no sabe vectorial</h1>
+            <p>El otro dia o no vino a clase o tiene memoria de pez, una de dos.</p>    
+        </div>
+    </div>
+    <div class="postal">
+        <img src="i2.svg">
+        <div>
+            <h1>2Juanmi no sabe vectorial</h1>
+            <p>El otro dia o no vino a clase o tiene memoria de pez, una de dos.</p>    
+        </div>
+    </div>
+    <div class="postal">
+        <img src="i3.svg">
+        <div>
+            <h1>3Juanmi no sabe vectorial</h1>
+            <p>El otro dia o no vino a clase o tiene memoria de pez, una de dos.</p>    
+        </div>   
+    </div>
+    <div class="postal">
+        <img src="i3.svg">
+        <div>
+            <h1>4Juanmi no sabe vectorial</h1>
+            <p>El otro dia o no vino a clase o tiene memoria de pez, una de dos.</p>    
+        </div>   
+    </div>
+    <div class="postal">
+        <img src="i3.svg">
+        <div>
+            <h1>5Juanmi no sabe vectorial</h1>
+            <p>El otro dia o no vino a clase o tiene memoria de pez, una de dos.</p>    
+        </div>   
+    </div>
+    <div class="postal">
+        <img src="i3.svg">
+        <div>
+            <h1>6Juanmi no sabe vectorial</h1>
+            <p>El otro dia o no vino a clase o tiene memoria de pez, una de dos.</p>    
+        </div>   
+    </div>
+</div>
 
+<script>
+    const observador = new IntersectionObserver(elementos => 
+        elementos.forEach(elemento => { if(elemento.isIntersecting) elemento.target.classList.add("animada")})
+    );
 
-
-
-
-
-
-
-
-
-
-
+    document.querySelectorAll(".postal").forEach(postal => observador.observe(postal) );
+</script>
 
 
 
@@ -213,116 +255,88 @@
 
 <!--
 <style>
-    .section1 {
+    .section2 {
+        padding: 25em;
         display: flex;
-        gap: 4em;
-        padding: 8em 20em;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 5em;
+    }
+    .slide {
+        display: flex;
+        transition: transform 1s;
+    }
+    .slide img {
+        width: 400px;
+    } 
+
+    .slide.left {
+        transform: translateX(-100%);
+    }
+    .slide.right {
+        transform: translateX(100%);
     }
 
-    .card {
-        width: 300px; height: 300px;
-        display: grid;
-        perspective: 1000px;   
+    .slide.animate {
+        transform: translateX(0);
     }
-
-    .card-front, .card-back {
-        grid-area: 1/1/1/1;
-        width: 100%; height: 100%;
-
-        backface-visibility: hidden;
-        transition: transform 1.6s;
-        transform-style: preserve-3d;
-        
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        border-radius: 4px;
-        
-        display: grid;
-        place-items: center;
-    }
-
-    .card-front {
-        background-color: rgb(87, 194, 87);
-    }
-
-    .card-back {
-        background-color: rgb(196, 196, 196);
-        transform: rotateY(-180deg);
-    }
-
-    .card:hover * {
-        transition: transform 0.4s;
-    }
-
-    .card:hover .card-front {
-        transform: rotateY(180deg);
-    }
-
-    .card:hover .card-back {
-        transform: rotateY(0deg);
-    }
-
 </style>
-<div class="section1">
-    <div class="card">
-        <div class="card-front">
-            hola
-        </div>
-        <div class="card-back">
-            adios
-            <br>
-            <a href="tal.html">GO!</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-front">
-            hola
-        </div>
-        <div class="card-back">
-            adios
-            <br>
-            y tal
+
+   
+
+<div class="section2">
+    <div class="slide left">
+        <img src="i1.svg">
+        <div>
+            <h2>Mujer con lapiz</h2>
+            <p>Una mujer esta escribiendo con un lapiz en una pagina web</p>
         </div>
     </div>
-    <div class="card">
-        <div class="card-front">
-            hola
+    <div class="slide right">
+        <div>
+            <h2>Hombre y mujer</h2>
+            <p>Una hombre con una mochila y una mujer con una maleta se van de vacaciones </p>
         </div>
-        <div class="card-back">
-            adios
-            <br>
-            y tal
-        </div>
+        <img src="i2.svg">
     </div>
-    <div class="card">
-        <div class="card-front">
-            hola
-        </div>
-        <div class="card-back">
-            adios
-            <br>
-            y tal
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-front">
-            hola
-        </div>
-        <div class="card-back">
-            adios
-            <br>
-            y tal
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-front">
-            hola
-        </div>
-        <div class="card-back">
-            adios
-            <br>
-            y tal
+    <div class="slide left">
+        <img src="i3.svg">
+        <div>
+            <h2>Mujer con lapiz</h2>
+            <p>Una mujer esta escribiendo con un lapiz en una pagina web</p>
         </div>
     </div>
 </div>
+<script>
+    const myObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("animate");
+            }
+        });
+    });
+    document.querySelectorAll(".slide").forEach(s => myObserver.observe(s));
+</script> 
+
+
+
+
+
+
 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
