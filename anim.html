@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head></head>
+<!--
 <style>
     * { box-sizing: border-box; }
     body { margin: 0; }
@@ -240,92 +241,75 @@
 
     document.querySelectorAll(".postal").forEach(postal => observador.observe(postal) );
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<style>
-    .section2 {
-        padding: 25em;
-        display: flex;
-        flex-direction: column;
-        gap: 5em;
-    }
-    .slide {
-        display: flex;
-        transition: transform 1s;
-    }
-    .slide img {
-        width: 400px;
-    } 
-
-    .slide.left {
-        transform: translateX(-100%);
-    }
-    .slide.right {
-        transform: translateX(100%);
-    }
-
-    .slide.animate {
-        transform: translateX(0);
-    }
-</style>
-
-   
-
-<div class="section2">
-    <div class="slide left">
-        <img src="i1.svg">
-        <div>
-            <h2>Mujer con lapiz</h2>
-            <p>Una mujer esta escribiendo con un lapiz en una pagina web</p>
-        </div>
-    </div>
-    <div class="slide right">
-        <div>
-            <h2>Hombre y mujer</h2>
-            <p>Una hombre con una mochila y una mujer con una maleta se van de vacaciones </p>
-        </div>
-        <img src="i2.svg">
-    </div>
-    <div class="slide left">
-        <img src="i3.svg">
-        <div>
-            <h2>Mujer con lapiz</h2>
-            <p>Una mujer esta escribiendo con un lapiz en una pagina web</p>
-        </div>
-    </div>
-</div>
-<script>
-    const myObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add("animate");
-            }
-        });
-    });
-    document.querySelectorAll(".slide").forEach(s => myObserver.observe(s));
-</script> 
-
-
-
-
-
-
 -->
 
+<style>
+.section3 {
+    display: grid;
+    place-items: center;
+}
+.central {
+    grid-area: 1/1/1/1;
+    background-color: red;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
 
+.tozo {
+    grid-area: 1/1/1/1;
+    background-image: url(face.jpg);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: -1000;
+    transition: transform 1s ease-out;
+}
 
+.t1.animado {
+    transform: translate(300px, -100px);
+}
+.t2.animado {
+    transform: translate(-300px, -100px);
+}
+.t3.animado {
+    transform: translate(400px, 100px);
+}
+.t4.animado {
+    transform: translate(-400px, 100px);
+}
+</style>
+
+<div class="section3">
+    <div class="central">
+        <span>holaa</span>
+    </div>
+    <div class="tozo t1"></div>
+    <div class="tozo t2"></div>
+    <div class="tozo t3"></div>
+    <div class="tozo t4"></div>
+</div>
+
+<div class="section3">
+    <div class="central"></div>
+    <div class="tozo t1"></div>
+    <div class="tozo t2"></div>
+    <div class="tozo t3"></div>
+    <div class="tozo t4"></div>
+</div>
+<script>
+    document.querySelectorAll(".section3").forEach(seccion => {
+        seccion.onclick = () => { 
+            seccion.querySelectorAll(".tozo").forEach(tozo => {
+                tozo.classList.add("animado");
+            })
+        };
+    });
+</script>
 
 
 
