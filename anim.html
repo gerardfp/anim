@@ -262,16 +262,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+}
+
+.section3 a {
+    grid-area: 1/1/1/1;
 }
 
 .tozo {
-    grid-area: 1/1/1/1;
     background-image: url(face.jpg);
     background-size: cover;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    z-index: -1000;
+    border-radius: 50%; 
     transition: transform 1s ease-out;
 }
 
@@ -296,18 +299,20 @@
     <div class="central">
         <span>holaa</span>
     </div>
-    <div class="tozo t1"></div>
-    <div class="tozo t2"></div>
-    <div class="tozo t3"></div>
-    <div class="tozo t4"></div>
+    <a href="#"><div class="tozo t1"></div></a>
+    <a href="#"><div class="tozo t2"></div></a>
+    <a href="#"><div class="tozo t3"></div></a>
+    <a href="#"><div class="tozo t4"></div></a>
+
 </div>
 
 <div class="section3">
     <div class="central"></div>
-    <div class="tozo t1"></div>
-    <div class="tozo t2"></div>
-    <div class="tozo t3"></div>
-    <div class="tozo t4"></div>
+    <a href="#"><div class="tozo t1"></div></a>
+    <a href="#"><div class="tozo t2"></div></a>
+    <a href="#"><div class="tozo t3"></div></a>
+    <a href="#"><div class="tozo t4"></div></a>
+
 </div>
 <script>
     document.querySelectorAll(".section3").forEach(seccion => {
